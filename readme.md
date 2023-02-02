@@ -43,3 +43,7 @@ docker build -t zap2it:latest .
 docker run -v ${PWD}:/guide zap2it
 </pre>
 Running the script like this will read zap2itconfig.ini from the host current directory and output the .xmltv files to the host current directory.
+
+FEB-02-2023 (chop249)
+Added server support for Plex and tivimate. The file will be served at http://your.local.ip.address:8080/xmlguide.xmltv REQUIRES Flask.
+
