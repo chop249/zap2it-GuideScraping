@@ -1,3 +1,4 @@
+from flask import Flask, send_file
 import configparser
 import json
 import urllib.parse, urllib.request
@@ -314,4 +315,11 @@ if args.findid is not None and args.findid:
 
 guide.BuildGuide()
 
+app = Flask(__name__)
 
+@app.route("/xmlguide.xmltv")
+def xmlguide():
+    return send_file("xmlguide.xmltv")
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)
